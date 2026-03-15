@@ -2,6 +2,8 @@
 
 This repository contains my projects and assignments for the Coursera Machine Learning Specialization by deeplearning.ai.
 
+[View the Structural Roadmap](ROADMAP.md)
+
 ## Courses
 
 This specialization consists of three courses:
