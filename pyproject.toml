@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "coursera-ml-specialization"
+name = "cyber-physical-systems-monorepo"
 version = "0.1.0"
 description = "Production-grade implementations of the Coursera ML Specialization algorithms."
 readme = "README.md"
