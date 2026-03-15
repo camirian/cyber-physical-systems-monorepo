@@ -1,41 +1,55 @@
-# Coursera Machine Learning Specialization
+# Coursera Machine Learning Specialization: Applied Engineering Edition
 
-This repository contains my projects and assignments for the Coursera Machine Learning Specialization by deeplearning.ai.
+This repository contains production-grade implementations and engineering-focused adaptations of the **Coursera Machine Learning Specialization by DeepLearning.AI**.
+
+Rather than just capturing notes, this project bridges the gap between ML theory and **Robotics, Firmware, and Systems Engineering**.
 
 [View the Structural Roadmap](ROADMAP.md)
 
-## Courses
+## 🚀 Key Differentiators (The "10x" Upgrade)
 
-This specialization consists of three courses:
+*   **Production-Grade Python:** Algorithms are refactored from notebooks into a modular Python package (`src/coursera_ml/`) with type hinting, docstrings, and clean NumPy vectorization.
+*   **🤖 Robotics Bridge:** Theoretical concepts are applied to real-world robotics problems, such as **ToF Sensor Calibration** and **Motor Fault Detection**.
+*   **Modern MLOps:** Integrated **GitHub Actions CI/CD** pipeline for automated testing (`pytest`), linting (`ruff`), and static analysis (`mypy`).
+*   **Test-Driven Development:** Every algorithm is verified with a comprehensive test suite to ensure mathematical and structural correctness.
 
-1.  [Course 1: Supervised Machine Learning: Regression and Classification](./course-1-supervised-ml/README.md)
-2.  [Course 2: Advanced Learning Algorithms](./course-2-advanced-learning-algorithms/README.md)
-3.  [Course 3: Unsupervised Learning, Recommenders, and Reinforcement Learning](./course-3-unsupervised-learning-recommenders-rl/README.md)
+## 📁 Project Structure
 
-Each course directory contains my work for that course, organized by week.
-
-## Project Structure
-
-The repository is organized as follows:
-
-```
+```text
 .
-├── course-1-supervised-ml
-│   ├── week-1
-│   │   ├── week-1-notes.md
-│   │   └── ... (assignments, labs)
-│   ├── week-2
-│   └── week-3
-├── course-2-advanced-learning-algorithms
-│   ├── week-1
-│   ├── week-2
-│   └── week-3
-├── course-3-unsupervised-learning-recommenders-rl
-│   ├── week-1
-│   ├── week-2
-│   └── week-3
-├── note_template.md
+├── .github/workflows/      # CI/CD Automation
+├── src/coursera_ml/        # Core Package (Production Algorithms)
+│   ├── course_1/           # Supervised Learning
+│   │   ├── linear_regression.py
+│   │   ├── logistic_regression.py
+│   │   └── robotics_calibration.py  <-- Applied Example
+│   └── course_2/           # Advanced Algorithms (Neural Networks)
+├── tests/                  # Pytest Suite
+├── course-1-supervised-ml/ # SQN Learning Notes
+├── course-2-advanced-learning-algorithms/
+├── course-3-unsupervised-learning-recommenders-rl/
+├── pyproject.toml          # Project Metadata & Tooling
 └── README.md
+```
+
+## 🛠️ Getting Started
+
+Install the project in editable mode with development dependencies:
+
+```bash
+pip install -e .[dev]
+```
+
+Run the tests to verify the implementations:
+
+```bash
+pytest tests/
+```
+
+Run the robotics calibration example:
+
+```bash
+python src/coursera_ml/course_1/robotics_calibration.py
 ```
 
 ## Enhanced Learning Experience
