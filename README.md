@@ -1,83 +1,45 @@
-# Coursera Machine Learning Specialization: Applied Engineering Edition
+# Autonomous Cyber-Physical Systems (CPS) Monorepo
 
-This repository contains production-grade implementations and engineering-focused adaptations of the **Coursera Machine Learning Specialization by DeepLearning.AI**.
+> **DEPRECATION NOTICE:** The legacy Coursera Machine Learning note-taking repository has been archived. 
 
-Rather than just capturing notes, this project bridges the gap between ML theory and **Robotics, Firmware, and Systems Engineering**.
+This repository has been fundamentally architected into a **Level 5 Cyber-Physical Systems Engineering Monorepo**. We do not perform rote data science or static CSV classification here. This is a rigorous testbed for **Physical AI**—where differentiable models govern physical reality, bounded strictly by thermodynamics, Hamiltonian mechanics, and formal control theory.
 
-[View the Structural Roadmap](ROADMAP.md)
+## 🌌 The 5-Phase Master Architecture
 
-## 🚀 Key Differentiators (The "10x" Upgrade)
+This repository is structured around the physical deployment lifecycle of an autonomous agent:
 
-*   **Production-Grade Python:** Algorithms are refactored from notebooks into a modular Python package (`src/coursera_ml/`) with type hinting, docstrings, and clean NumPy vectorization.
-*   **🤖 Robotics Bridge:** Theoretical concepts are applied to real-world robotics problems, such as **ToF Sensor Calibration** and **Motor Fault Detection**.
-*   **Modern MLOps:** Integrated **GitHub Actions CI/CD** pipeline for automated testing (`pytest`), linting (`ruff`), and static analysis (`mypy`).
-*   **Test-Driven Development:** Every algorithm is verified with a comprehensive test suite to ensure mathematical and structural correctness.
+### PHASE 1: The Epistemological Baseline (`src/phase_1_epistemology/`)
+*Beyond interpretability to structural equivariance.*
+We utilize **Information Geometry** and **Lie Group Equivariance (SO(3), SE(3))**. Neural networks here do not just map inputs to outputs; they are mathematically constrained to preserve the symmetries of the physical laws governing the system (e.g., rotation/translation invariance).
 
-## 📁 Project Structure
+### PHASE 2: The Differentiable Simulator (`src/phase_2_simulator/`)
+*Digital twins that bridge the Sim-to-Real gap.*
+Static datasets are banned. We integrate with high-fidelity, stochastic physics engines. By using differentiable physics, we can backpropagate gradients *through* the simulation itself, allowing for the joint optimization of hardware morphology and control policies.
 
-```text
-.
-├── .github/workflows/      # CI/CD Automation
-├── src/coursera_ml/        # Core Package (Production Algorithms)
-│   ├── course_1/           # Supervised Learning
-│   │   ├── linear_regression.py
-│   │   ├── logistic_regression.py
-│   │   └── robotics_calibration.py  <-- Applied Example
-│   └── course_2/           # Advanced Algorithms (Neural Networks)
-├── tests/                  # Pytest Suite
-├── course-1-supervised-ml/ # SQN Learning Notes
-├── course-2-advanced-learning-algorithms/
-├── course-3-unsupervised-learning-recommenders-rl/
-├── pyproject.toml          # Project Metadata & Tooling
-└── README.md
-```
+### PHASE 3: The Physics-AI Convergence (`src/phase_3_convergence/`)
+*Strictly Conservative AI.*
+We employ **Hamiltonian Neural Networks (HNNs)**. Standard ML models diverge over time when predicting physical trajectories. HNNs learn the scalar Hamiltonian (Total Energy) and analytically derive equations of motion via PyTorch Autograd ($\dot{q} = \frac{\partial \mathcal{H}}{\partial p}, \dot{p} = -\frac{\partial \mathcal{H}}{\partial q}$). This guarantees symplectic phase space volume preservation and strict energy conservation.
 
-## 🛠️ Getting Started
+### PHASE 4: MBSE & Formal Safety Verification (`src/phase_4_mbse/`)
+*Zero Blast Radius.*
+The "Blast Radius" of any AI agent is bounded by **Control Barrier Functions (CBFs)** and **Control Lyapunov Functions (CLFs)**. The AI proposes a nominal control vector $u_{nom}$, and a high-speed convex optimizer (Quadratic Program) projects it into the mathematically proven Safe Set $\mathcal{C}$. *The system cannot crash, mathematically.*
 
-Install the project in editable mode with development dependencies:
+### PHASE 5: Edge Execution (`src/phase_5_edge/`)
+*Bare-metal, real-time control constraints.*
+Deployment pipelines specifically targeting edge compute (e.g., Jetson Orin Nano). This includes TensorRT bindings, kernel-level CUDA optimizations, and Wait-and-Verify automated hardware rollback loops to satisfy strict sub-10ms latency requirements.
+
+---
+
+## 🛠️ Repository Execution
 
 ```bash
-pip install -e .[dev]
+# Phase 3: Run the Hamiltonian Neural Network (HNN) Smoke Test
+python src/phase_3_convergence/pinns/hamiltonian_nn.py
+
+# Phase 4: Run the Control Barrier Function (CBF) QP Filter
+python src/phase_4_mbse/cbf_safety_filter.py
 ```
 
-Run the tests to verify the implementations:
+## 📐 Interface Control Documents (ICD)
 
-```bash
-pytest tests/
-```
-
-Run the robotics calibration example:
-
-```bash
-python src/coursera_ml/course_1/robotics_calibration.py
-```
-
-## Enhanced Learning Experience
-
-This repository goes beyond standard note-taking by incorporating interactive and visual elements to deepen understanding:
-
-*   **📊 Visualizations:** Complex concepts like Neural Networks, Decision Trees, and K-Means clustering are visualized directly in the markdown using **Mermaid diagrams**.
-*   **💻 Code Snippets:** Practical **Python/NumPy** implementations of key functions (e.g., Sigmoid, ReLU) are provided alongside the theory.
-*   **navigation:** All notes include a **Table of Contents** for quick navigation to specific topics.
-
-## Note-Taking System (SQN)
-
-This project uses a "Structured Queryable Notes" (SQN) system to facilitate active learning and retention.
-
-### Philosophy: From Scribe to Architect
-
-The goal is not just to transcribe lecture content, but to actively question, structure, and connect the material to build a robust knowledge base.
-
-### How to Use
-
-For each week, a pre-filled note file (e.g., `week-1-notes.md`) is provided. The system uses the following legend to categorize information:
-
-*   🔑 **Key Definition:** For critical, must-know vocabulary.
-*   ❓ **Question:** For things you don't understand or want to explore later.
-*   🔗 **Connection:** For links to your existing knowledge.
-*   💡 **Insight:** For "aha!" moments or key takeaways.
-*   ⚠️ **Warning:** For common mistakes, pitfalls, or important limitations.
-
-At the end of each module, fill out the **Module Summary** section from memory *before* reviewing your notes to solidify your learning.
-
-A blank template, `note_template.md`, is available in the root directory for any additional notes or future courses.
+All boundaries between the software inference graphs and the physical hardware actuators are strictly defined in `docs/icd/ICD_TEMPLATE.md` using the DSRP framework.
