@@ -1,0 +1,20 @@
+{
+    "name": "CPS Monorepo Scientific Sandbox (Python 3.10)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    
+    // Mathematically compile the Hatchling build algorithms automatically
+    "postCreateCommand": "pip install -e .[dev]",
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "charliermarsh.ruff",
+                "matangover.mypy"
+            ]
+        }
+    }
+}

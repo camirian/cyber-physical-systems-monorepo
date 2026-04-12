@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cyber-physical-systems-monorepo"
+version = "0.1.0"
+description = "Production-grade implementations of the Coursera ML Specialization algorithms."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.3.0",
+    "ruff>=0.0.260",
+    "mypy>=1.2.0"
+]
+
+[tool.ruff]
+select = ["E", "F", "B"]
+line-length = 88
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/coursera_ml"]
